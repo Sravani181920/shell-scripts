@@ -6,6 +6,7 @@ then
     echo "ERROR:: you must be Sudo User to execute this script"
     exit 1
 fi
+
 dnf list installed mysql
 if [ $? -ne 0 ]
 then
