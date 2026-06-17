@@ -7,8 +7,8 @@ Y="\e[33m" #yellow color
 N="\e[0m" #normal is white color
 LOG_FOLDER="/var/log/shellscrits-logs"
 LOG_FILE=$(echo $0 |cut -d "." -f1)
-TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
-LOG_FILE_NAME="$LOG_FOLDER/$LOG_FILE-$TIME_STAMP.log"
+TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
+LOG_FILE_NAME="$LOG_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
 VALIDATE(){     #function
     if [ $1 -ne 0 ]
@@ -20,7 +20,7 @@ VALIDATE(){     #function
     fi    
 }
 
-echo "Script started executing at: $TIME_STAMP" &>>$LOG_FILE_NAME
+echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 if [ $USERID -ne 0 ] #sudo user id is always 0
 then
     echo "ERROR:: you must be Sudo User to execute this script"
